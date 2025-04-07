@@ -1,6 +1,6 @@
-# Valorant Agent Randomizer
+# Valorant Agent Randomiser
 
-**Valorant Agent Randomizer** is a web-based game built using **Raylib** and **C**, designed to randomly select a Valorant agent based on a chosen role. It features a full Valorant-style user interface, dynamic animations, and a modern, responsive layout for an immersive experience.
+**Valorant Agent Randomiser** is a web-based game built using **Raylib** and **C**, designed to randomly select a Valorant agent based on a chosen role. It features a full Valorant-style user interface, dynamic animations, and a modern, responsive layout for an immersive experience.
 
 ## Features
 
@@ -34,4 +34,5 @@
 
 **main.c** – Raylib app.  
 **shell.html** – web interface.  
+ValRandomiser was created under Riot Games' "Legal Jibber Jabber" policy using assets owned by Riot Games.  Riot Games does not endorse or sponsor this project.
 
