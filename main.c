@@ -128,7 +128,7 @@ int agentCount = sizeof(agents) / sizeof(agents[0]);
 
 Agent selectedAgent;
 
-// loads the assets 
+// loads the assets for the app
 
 void LoadAssets() {
     valorantFont = LoadFont("resources/Valorant Font.ttf");
@@ -194,7 +194,7 @@ void DrawSplashScreen() {
     float textX = startButton.x + (startButton.width - textSize.x) / 2;
     float textY = startButton.y + (startButton.height - textSize.y) / 2;
 
- 
+    // Smooth Lerp Animation
     if (CheckCollisionPointRec(GetMousePosition(), startButton)) {
         startButtonLerp += 0.06f;  // configures the speed of the fade in
         if (startButtonLerp > 1.0f) startButtonLerp = 1.0f;
@@ -203,8 +203,7 @@ void DrawSplashScreen() {
         if (startButtonLerp < 0.0f) startButtonLerp = 0.0f;
     }
 
-// uses tweening or lerping to blend button color from RED to DARKGRAY based on hover (0.0 to 1.0).
-
+// Smoothly blends button color from RED to DARKGRAY based on hover (0.0 to 1.0).
         Color buttonColor = (Color){
         (int)LerpFloat(RED.r, DARKGRAY.r, startButtonLerp),
         (int)LerpFloat(RED.g, DARKGRAY.g, startButtonLerp),
@@ -239,7 +238,7 @@ void DrawRoleSelection() {
     
     Vector2 mousePos = GetMousePosition();
 
-// uses tweening or lerping to blend button color from RED to DARKGRAY based on hover (0.0 to 1.0).
+// Smoothly blends button color from RED to DARKGRAY based on hover (0.0 to 1.0).
 
     for (int i = 0; i < 5; i++) {
         roleButtons[i] = (Rectangle){ 200, 200 + (i * 80), 400, 60 };
@@ -323,7 +322,6 @@ void DrawAgentScreen() {
     DrawTextEx(valorantFont, selectedAgent.role, (Vector2){ 50, 120 }, 30, 2, RED); // draws the agent role
 
     // Description Box
-
     Rectangle descriptionBox = {50, 180, 500, 120}; 
     DrawWrappedText(selectedAgent.description,  descriptionFont, descriptionBox, 20, 2, WHITE);
 
@@ -369,7 +367,7 @@ if (CheckCollisionPointRec(GetMousePosition(), backButton)) {
     if (backButtonLerp < 0.0f) backButtonLerp = 0.0f;
 }
 
-// set colors using LerpFloat()
+// use colors using LerpFloat()
 Color buttonColor = (Color){
     (int)LerpFloat(RED.r, DARKGRAY.r, backButtonLerp),
     (int)LerpFloat(RED.g, DARKGRAY.g, backButtonLerp),
